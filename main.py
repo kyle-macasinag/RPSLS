@@ -5,6 +5,7 @@ battle = Battlefield()
 
 battle.display_welcome()
 battle.choose_opponent()
+battle.the_game()
 
 
 
