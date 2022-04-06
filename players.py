@@ -1,9 +1,10 @@
 class Players():
-    def __init__(self, score, chosen_gesture):
-        self.points = score
+    def __init__(self):
+        self.points = 0
         self.gestures = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
-        self.chosen_gesture = chosen_gesture
+        self.chosen_gesture = ''
 
     def choose_gesture(self):
-        print(f'Please choose a gesture: {self.gestures}')
-        
+        self.chosen_gesture = input(f'Please choose a gesture: {self.gestures}')
+
+    

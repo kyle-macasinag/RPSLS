@@ -1,9 +1,10 @@
 from players import Players
+import random
 
 class Ai(Players):
     def __init__():
         return super().__init__()
 
     def choose_gesture(self):
-        
-        return super().choose_gesture()
+        self.ai_chosen = random.choice(self.gestures)
+        print(f"AI has chosen {self.ai_chosen}")
