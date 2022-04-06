@@ -1,13 +1,9 @@
 class Players():
-    #Display rules and matchups
-    #Choose players (ai or player 2)
-    #Selectable gestures are presented ---
-    #Each player selects a gesture
-    #Determine winner of round using the rule's logic
-    #Display results
-    #Record results(If there was a winner, their win counter goes up)
-    #Play until win counter reaches 2 (While loop?) ---
-    #Display winner of game
+    def __init__(self, score, chosen_gesture):
+        self.points = score
+        self.gestures = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
+        self.chosen_gesture = chosen_gesture
 
-    #Players can:
-    #Input gesture
+    def choose_gesture(self):
+        print(f'Please choose a gesture: {self.gestures}')
+        
