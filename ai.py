@@ -8,3 +8,4 @@ class Ai(Players):
     def choose_gesture(self):
         self.ai_chosen = random.choice(self.gestures)
         print(f"AI has chosen {self.ai_chosen}")
+        return self.ai_chosen

@@ -6,6 +6,8 @@ class Battlefield():
         self.player_1 = Human_Player
         self.player_2 = None
         self.opponent_choice = ""
+        self.player_1_score = 0
+        self.player_2_score = 0
         pass
 
     def display_welcome(self):
@@ -29,46 +31,65 @@ Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper di
         print(f'Your opponent is now {self.opponent_choice}')
 
     def the_game(self):
-        player_1_score = 0
-        player_2_score = 0
-        while (player_1_score < 2) and (player_2_score < 2):#JUST ADDED SELF. TO PLAYER CHOICE
+        # player_1_score = 0
+        # player_2_score = 0
+        
+        while (self.player_1_score < 2) and (self.player_2_score < 2):#NEEDS DEBUGGING
             self.player_1_choice = self.player_1.choose_gesture(self)
             self.player_2_choice = self.player_2.choose_gesture(self)
-            if  (player_1_choice == "Rock") and (player_2_choice == "Scissors" or "Lizard"):#Rock
-                print(f"Rock beats{player_2_choice}.")
+            if  (self.player_1_choice == "Rock") and ((self.player_2_choice == "Scissors") or (self.player_2_choice == "Lizard")):#Rock
+                print(f"Rock beats{self.player_2_choice}.")
                 print("Player 1 wins this round")
-                player_1_score += 1
-            elif (player_2_choice == "Rock") and (player_1_choice == "Scissors" or "Lizard"):
-                print(f"Rock beats{player_1_choice}.")
+                self.player_1_score += 1
+            elif (self.player_2_choice == "Rock") and ((self.player_1_choice == "Scissors") or (self.player_1_choice == "Lizard")):
+                print(f"Rock beats{self.player_1_choice}.")
                 print("Player 2 wins this round")
-                player_2_score += 1
-            elif (player_1_choice == "Scissors") and (player_2_choice == "Paper" or "Lizard"):#Scissors
-                print(f"Scissors beats {player_2_choice}.")
+                self.player_2_score += 1
+            elif (self.player_1_choice == "Scissors") and ((self.player_2_choice == "Paper") or (self.player_2_choice == "Lizard")):#Scissors
+                print(f"Scissors beats {self.player_2_choice}.")
                 print ("Player 1 wins this round")
-                player_1_score += 1
-            elif (player_2_choice == "Scissors") and (player_1_choice == "Paper" or "Lizard"):
-                print(f"Scissors beats {player_1_choice}.")
+                self.player_1_score += 1
+            elif (self.player_2_choice == "Scissors") and ((self.player_1_choice == "Paper") or (self.player_1_choice == "Lizard")):
+                print(f"Scissors beats {self.player_1_choice}.")
                 print("Player 2 wins this round")
-                player_2_score += 1
-            elif (player_1_choice == "Paper") and player_2_choice == "Spock" or "Rock":#Paper
-                print(f"Paper beats {player_1_choice}.")
+                self.player_2_score += 1
+            elif (self.player_1_choice == "Paper") and ((self.player_2_choice == "Spock") or (self.player_2_choice == "Rock")):#Paper
+                print(f"Paper beats {self.player_2_choice}.")
                 print("Player 1 wins this round")
-                player_1_score += 1
-            elif (player_2_choice == "Paper") and (player_1_choice == "Spock" or "Rock"):
-                print(f"Paper beats {player_1_choice}.")
+                self.player_1_score += 1
+            elif (self.player_2_choice == "Paper") and ((self.player_1_choice == "Spock") or (self.player_1_choice == "Rock")):
+                print(f"Paper beats {self.player_1_choice}.")
                 print("Player 2 wins this round")
-            elif (player_1_choice == "Spock") and (player_2_choice == "Scissors" or "Rock"):#Spock
-                print(f"Spock beats {player_2_choice}.")
+            elif (self.player_1_choice == "Spock") and ((self.player_2_choice == "Scissors") or (self.player_2_choice == "Rock")):#Spock
+                print(f"Spock beats {self.player_2_choice}.")
                 print("Player 1 wins this round")
-                player_1_score += 1
-            elif (player_2_choice == "Spock") and (player_1_choice == "Scissors" or "Rock"):
-                print(f"Spock beats {player_1_choice}.")
+                self.player_1_score += 1
+            elif (self.player_2_choice == "Spock") and ((self.player_1_choice == "Scissors") or (self.player_1_choice == "Rock")):
+                print(f"Spock beats {self.player_1_choice}.")
                 print("Player 2 wins this round")
-            elif (player_1_choice == "Lizard") and (player_2_choice == "Paper" or "Spock"):#Lizard
-                print(f"Lizard beats {player_2_choice}.")
+                self.player_2_score += 1
+            elif (self.player_1_choice == "Lizard") and ((self.player_2_choice == "Paper") or (self.player_2_choice == "Spock")):#Lizard
+                print(f"Lizard beats {self.player_2_choice}.")
                 print("Player 1 wins this round")
-            elif (player_2_choice == "Lizard") and (player_1_choice == "Paper" or "Spock"):#Lizard
-                print(f"Lizard beats {player_1_choice}.")
+                self.player_1_score += 1
+            elif (self.player_2_choice == "Lizard") and ((self.player_1_choice == "Paper") or (self.player_1_choice == "Spock")):
+                print(f"Lizard beats {self.player_1_choice}.")
                 print("Player 2 wins this round")
+                self.player_2_score += 1
             else:
                 print("Tie! No points awarded!")
+        if self.player_1_score == 2 or self.player_2_score == 2:
+                    self.display_winner()    
+
+        
+
+    def display_winner(self):
+        if self.player_1_score == 2:
+            print("Player 1 wins!")
+        elif self.player_2_score == 2:
+            print("Player 2 wins!")
+
+# Yes, needs to be
+# x == a OR x == b
+# not
+# x == a OR b

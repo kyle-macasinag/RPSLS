@@ -8,5 +8,4 @@ class Players():
         self.gestures = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
         
         self.chosen_gesture = input(f'Please choose a gesture: {self.gestures}')
-
-    
+        return self.chosen_gesture

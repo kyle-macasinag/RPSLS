@@ -21,3 +21,12 @@ battle.the_game()
 
     #Players can:
     #Input gesture
+
+    # elif ((self.player_1_choice == "Spock") and (self.player_2_choice == "Scissors" or "Rock")):#Spock
+    #             print(f"Spock beats {self.player_2_choice}.")
+    #             print("Player 1 wins this round")
+
+    # elif ((self.player_1_choice == "Scissors") and (self.player_2_choice == "Paper" or "Lizard")):#Scissors
+    #             print(f"Scissors beats {self.player_2_choice}.")
+    #             print ("Player 1 wins this round")
+              
