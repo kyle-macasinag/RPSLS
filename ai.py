@@ -1,7 +1,7 @@
-from players import Players
+from player import Player
 import random
 
-class Ai(Players):
+class Ai(Player):
     def __init__():
         return super().__init__()
 

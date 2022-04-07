@@ -30,19 +30,17 @@ Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper di
                 print("Invalid input. Please choose 'Human' or 'AI' ")
         print(f'Your opponent is now {self.opponent_choice}')
 
-    def the_game(self):
-        # player_1_score = 0
-        # player_2_score = 0
-        
-        while (self.player_1_score < 2) and (self.player_2_score < 2):#NEEDS DEBUGGING
+    def the_game(self):       
+        while (self.player_1_score < 2) and (self.player_2_score < 2):
+            print(f"The current score is: {self.player_1_score} to {self.player_2_score}")
             self.player_1_choice = self.player_1.choose_gesture(self)
             self.player_2_choice = self.player_2.choose_gesture(self)
             if  (self.player_1_choice == "Rock") and ((self.player_2_choice == "Scissors") or (self.player_2_choice == "Lizard")):#Rock
-                print(f"Rock beats{self.player_2_choice}.")
+                print(f"Rock beats {self.player_2_choice}.")
                 print("Player 1 wins this round")
                 self.player_1_score += 1
             elif (self.player_2_choice == "Rock") and ((self.player_1_choice == "Scissors") or (self.player_1_choice == "Lizard")):
-                print(f"Rock beats{self.player_1_choice}.")
+                print(f"Rock beats {self.player_1_choice}.")
                 print("Player 2 wins this round")
                 self.player_2_score += 1
             elif (self.player_1_choice == "Scissors") and ((self.player_2_choice == "Paper") or (self.player_2_choice == "Lizard")):#Scissors
@@ -60,6 +58,7 @@ Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper di
             elif (self.player_2_choice == "Paper") and ((self.player_1_choice == "Spock") or (self.player_1_choice == "Rock")):
                 print(f"Paper beats {self.player_1_choice}.")
                 print("Player 2 wins this round")
+                self.player_2_score += 1
             elif (self.player_1_choice == "Spock") and ((self.player_2_choice == "Scissors") or (self.player_2_choice == "Rock")):#Spock
                 print(f"Spock beats {self.player_2_choice}.")
                 print("Player 1 wins this round")
@@ -85,11 +84,11 @@ Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper di
 
     def display_winner(self):
         if self.player_1_score == 2:
-            print("Player 1 wins!")
+            print(f"Player 1 wins! The final score is {self.player_1_score} to {self.player_2_score}")
         elif self.player_2_score == 2:
-            print("Player 2 wins!")
+            print(f"Player 2 wins! The final score is {self.player_2_score} to {self.player_1_score}")
 
-# Yes, needs to be
-# x == a OR x == b
-# not
-# x == a OR b
+    def start_game(self):
+        self.display_welcome()
+        self.choose_opponent()
+        self.the_game()
