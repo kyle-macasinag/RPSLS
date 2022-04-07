@@ -78,7 +78,7 @@ Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper di
             else:
                 print("Tie! No points awarded!")
         if self.player_1_score == 2 or self.player_2_score == 2:
-                    self.display_winner()    
+                    self.display_winner()    #Displays winner
 
         
 

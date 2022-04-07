@@ -1,6 +1,5 @@
 class Player():
     def __init__(self):
-        self.points = 0
         self.chosen_gesture = ''
 
     def choose_gesture(self):
