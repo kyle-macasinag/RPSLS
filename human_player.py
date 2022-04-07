@@ -1,5 +1,5 @@
 from player import Player
 
 class Human_Player(Player):
-    def __init__():
-        return super().__init__()
+    def __init__(self):
+        super().__init__()

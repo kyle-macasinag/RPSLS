@@ -3,7 +3,7 @@ import random
 
 class Ai(Player):
     def __init__(self):
-        return super().__init__()
+        super().__init__()
 
     def choose_gesture(self):
         self.ai_chosen = random.choice(self.gestures)

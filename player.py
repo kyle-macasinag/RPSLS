@@ -1,11 +1,11 @@
 class Player():
     def __init__(self):
-        self.points = 0
+        self.score = 0
         self.chosen_gesture = ''
+        self.gestures = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
 
     def choose_gesture(self):
 
-        self.gestures = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
 
         self.chosen_gesture = input(f'Please choose a gesture: {self.gestures}')
         while self.chosen_gesture not in (self.gestures):
